@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/cotizacionDolar/static/css/main.a548e64e.css",
-    "main.js": "/cotizacionDolar/static/js/main.d32805dd.js",
-    "static/js/787.38a524b6.chunk.js": "/cotizacionDolar/static/js/787.38a524b6.chunk.js",
-    "static/media/logo.svg": "/cotizacionDolar/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "static/media/background.svg": "/cotizacionDolar/static/media/background.7ca45e10c39e1572f455.svg",
-    "index.html": "/cotizacionDolar/index.html",
-    "main.a548e64e.css.map": "/cotizacionDolar/static/css/main.a548e64e.css.map",
-    "main.d32805dd.js.map": "/cotizacionDolar/static/js/main.d32805dd.js.map",
-    "787.38a524b6.chunk.js.map": "/cotizacionDolar/static/js/787.38a524b6.chunk.js.map"
+    "main.css": "/static/css/main.5ac89ba1.css",
+    "main.js": "/static/js/main.acd7424d.js",
+    "static/js/787.38a524b6.chunk.js": "/static/js/787.38a524b6.chunk.js",
+    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/background.svg": "/static/media/background.7ca45e10c39e1572f455.svg",
+    "index.html": "/index.html",
+    "main.5ac89ba1.css.map": "/static/css/main.5ac89ba1.css.map",
+    "main.acd7424d.js.map": "/static/js/main.acd7424d.js.map",
+    "787.38a524b6.chunk.js.map": "/static/js/787.38a524b6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a548e64e.css",
-    "static/js/main.d32805dd.js"
+    "static/css/main.5ac89ba1.css",
+    "static/js/main.acd7424d.js"
   ]
 }
