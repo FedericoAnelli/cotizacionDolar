@@ -22,9 +22,7 @@ const DollarPricesContainer = () => {
         <Grid container spacing={2} padding={10}>
             {dollarBlue.map((dollar) => (
                 <Grid key={dollar.casa.nombre} item xs={12} sm={6} md={4} lg={3}>
-                    {dollar.casa.nombre === "Dolar Soja" ? null :
                     <DollarPrices title={dollar.casa.nombre} icon={<PaidIcon />} buy={dollar.casa.compra} sell={dollar.casa.venta} />
-                    }
                 </Grid>
             ))}
         </Grid>

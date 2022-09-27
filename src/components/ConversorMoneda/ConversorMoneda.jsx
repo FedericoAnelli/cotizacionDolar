@@ -3,41 +3,55 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 import FormControl from '@mui/material/FormControl';
 import InputAdornment from '@mui/material/InputAdornment';
 import { useState } from 'react';
+import SwapVerticalCircleIcon from '@mui/icons-material/SwapVerticalCircle';
+import "./ConversorMonedas.css";
 
 const ConversorMoneda = ({ cotizacionDolar }) => {
-   
     const [values, setValues] = useState({
         amountUSD: 1,
         amountARS: 1,
       });
+
+      const [swap, setSwap] = useState(false);
     
       const handleChange = (prop) => (event) => {
-        setValues({ ...values, [prop]: event.target.value });
+        setValues({ [prop]: event.target.value });
+      };
+
+      const handleSwapClick = () => {
+        setValues({
+            amountUSD: 1,
+            amountARS: 1,
+          })
+        setSwap(!swap);
       };
 
     return (
-        <div className="conversor">
+        <div>
             <h5>Convertir</h5>
-            <FormControl fullWidth sx={{ m: 1, width: "80%" }}>
-            <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
+            <div className={swap ? "conversor" : "conversorReverse"}>
+            <FormControl fullWidth sx={{ m: 1, width: "100%" }}>
+            <InputLabel htmlFor="outlined-adornment-amount">Cantidad</InputLabel>
                 <OutlinedInput
                     id="outlined-adornment-amount"
-                    value={ values.amountUSD }
-                    onChange={handleChange('amountUSD')}
+                    value={swap ? values.amountARS : values.amountUSD / cotizacionDolar }
+                    onChange={swap ? handleChange('amountUSD') : handleChange('amountARS')}
                     startAdornment={<InputAdornment position="start">U$D</InputAdornment>}
-                    label="Amount"
+                    label="Cantidad"
                 />
             </FormControl>
-            <FormControl fullWidth sx={{ m: 1, width: "80%" }}>
-                <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
+            <SwapVerticalCircleIcon className='swapIcon' onClick={() => handleSwapClick()} />
+            <FormControl fullWidth sx={{ m: 1, width: "100%" }}>
+                <InputLabel htmlFor="outlined-adornment-amount">Cantidad</InputLabel>
                 <OutlinedInput
                     id="outlined-adornment-amount"
-                    value={ values.amountUSD * cotizacionDolar}
-                    onChange={handleChange('amountARS')}
+                    value={swap ? values.amountUSD * cotizacionDolar : values.amountUSD}
+                    onChange={swap ? handleChange('amountARS') : handleChange('amountUSD')}
                     startAdornment={<InputAdornment position="start">AR$</InputAdornment>}
-                    label="Amount"
+                    label="Cantidad"
                 />
             </FormControl>
+            </div>
         </div>
     );
 }

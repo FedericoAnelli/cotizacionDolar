@@ -18,7 +18,7 @@ const DollarPrices = ( { title, icon, buy, sell }) => {
         <div>
             <Card raised={true}>
                 <CardHeader
-                title={<Typography variant="subtitle1" component="h2"><Box fontWeight='fontWeightBold'>{title}</Box></Typography>}
+                title={<Typography variant="subtitle1" component="h2"><Box fontFamily='' fontWeight='fontWeightBold'>{title}</Box></Typography>}
                 avatar={icon}
                 sx={headerStyle}
                 />

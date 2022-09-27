@@ -1,0 +1,7 @@
+.customToolBar{
+    background-color: #ffffff96 !important;
+    backdrop-filter: blur(10px);
+    color: #414141 !important;
+    border-bottom: #414141 1px solid;
+    box-shadow: #414141 0px 0px 10px 0px;
+}
