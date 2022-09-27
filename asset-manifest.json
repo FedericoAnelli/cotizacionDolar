@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/cotizacionDolar/static/css/main.97a16910.css",
-    "main.js": "/cotizacionDolar/static/js/main.2d00fd4e.js",
+    "main.css": "/cotizacionDolar/static/css/main.d3b9815c.css",
+    "main.js": "/cotizacionDolar/static/js/main.32ae28cc.js",
     "static/js/787.38a524b6.chunk.js": "/cotizacionDolar/static/js/787.38a524b6.chunk.js",
     "static/media/logo.svg": "/cotizacionDolar/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/cotizacionDolar/index.html",
-    "main.97a16910.css.map": "/cotizacionDolar/static/css/main.97a16910.css.map",
-    "main.2d00fd4e.js.map": "/cotizacionDolar/static/js/main.2d00fd4e.js.map",
+    "main.d3b9815c.css.map": "/cotizacionDolar/static/css/main.d3b9815c.css.map",
+    "main.32ae28cc.js.map": "/cotizacionDolar/static/js/main.32ae28cc.js.map",
     "787.38a524b6.chunk.js.map": "/cotizacionDolar/static/js/787.38a524b6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.97a16910.css",
-    "static/js/main.2d00fd4e.js"
+    "static/css/main.d3b9815c.css",
+    "static/js/main.32ae28cc.js"
   ]
 }
