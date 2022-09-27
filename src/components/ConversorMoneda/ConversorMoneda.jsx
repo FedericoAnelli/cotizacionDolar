@@ -8,20 +8,28 @@ import "./ConversorMonedas.css";
 
 const ConversorMoneda = ({ cotizacionDolar }) => {
     const [values, setValues] = useState({
-        amountUSD: 1,
-        amountARS: 1,
+        amountUSD: '',
+        amountARS: ''
       });
 
       const [swap, setSwap] = useState(false);
     
       const handleChange = (prop) => (event) => {
+        if(event.target.value === '')
+        {
+            setValues({
+                amountUSD: '',
+                amountARS: ''
+              })
+            return;
+        }
         setValues({ [prop]: event.target.value });
       };
 
       const handleSwapClick = () => {
         setValues({
-            amountUSD: 1,
-            amountARS: 1,
+            amountUSD: '',
+            amountARS: ''
           })
         setSwap(!swap);
       };

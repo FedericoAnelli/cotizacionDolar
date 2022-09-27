@@ -16,9 +16,12 @@ const headerStyle = {
 
 
 const DollarPrices = ( { title, icon, buy, sell, variation }) => {
-    const variationDecimalChange = variation.replace(",", ".");
-    const variationParsed = ((parseFloat(variationDecimalChange)).toFixed(2));
     
+    const numberParser = (number) => {
+        const numberDecimalChange = number.replace(",", ".");
+        const numberParsed = ((parseFloat(numberDecimalChange)).toFixed(2));
+        return numberParsed;
+    }
 
 
     return (
@@ -34,8 +37,8 @@ const DollarPrices = ( { title, icon, buy, sell, variation }) => {
                         {sell === "0" ? null : <p><strong>Venta:</strong> ${sell}</p>}
                         {buy === "No Cotiza" ? null : <p><strong>Compra:</strong> ${buy}</p>}
                         </div>
-                        <p className='variacion'><strong>Variación: </strong>  {variationParsed < 0 ?  <p className='negative'> {variation} <ArrowDropDownIcon /></p> : <p className='positive'> {variation} <ArrowDropUpIcon /></p>} </p>
-                        <ConversorMoneda cotizacionDolar={parseFloat(sell)} />
+                        <div className='variacion'> <p><strong>Variación: </strong></p> {numberParser(variation) < 0 ?  <p className='negative'> {variation} <ArrowDropDownIcon /></p> : <p className='positive'> {variation} <ArrowDropUpIcon /></p>} </div>
+                        <ConversorMoneda cotizacionDolar={numberParser(sell)} />
                      </CardContent>
             </Card>
         </div>
