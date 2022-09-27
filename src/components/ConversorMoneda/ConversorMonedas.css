@@ -29,14 +29,16 @@
 
 .swapIcon:hover{
     color: rgb(45, 108, 45);
-    font-size: xx-large;
     border: #414141 1px solid;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(10px);
     box-shadow: #414141 0px 0px 10px 0px;
+    transform: rotate(180deg);
+    transition: all 0.5s;
 }
 
 .swapIcon:active{
+    transition: all 0.5s;
     transform: rotate(180deg);
 }

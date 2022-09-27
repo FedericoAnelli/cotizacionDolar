@@ -18,6 +18,8 @@ const headerStyle = {
 const DollarPrices = ( { title, icon, buy, sell, variation }) => {
     const variationDecimalChange = variation.replace(",", ".");
     const variationParsed = ((parseFloat(variationDecimalChange)).toFixed(2));
+    
+
 
     return (
         <div>
