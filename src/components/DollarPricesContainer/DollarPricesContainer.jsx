@@ -12,7 +12,7 @@ const DollarPricesContainer = () => {
         const getDollarPrice = async () => {
             const response = await fetch('https://www.dolarsi.com/api/api.php?type=valoresprincipales');
             const data = await response.json();
-            const filteredData = data.filter(function(dol){if (dol.casa.nombre === "Dolar Soja"){return false} return true});
+            const filteredData = data.filter(function(dol){if (dol.casa.nombre === "Dolar Soja" || dol.casa.nombre === "Bitcoin" || dol.casa.nombre === "Argentina" || dol.casa.nombre === "Dolar"){return false} return true});
             setDollarBlue(filteredData);
         }
         getDollarPrice();

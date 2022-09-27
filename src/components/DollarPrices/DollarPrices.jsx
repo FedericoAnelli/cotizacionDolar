@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, Icon } from '@mui/material';
-import { useState } from 'react';
 import Typography from '@mui/material/Typography';
 import ConversorMoneda from '../ConversorMoneda/ConversorMoneda';
+import Box from '@mui/material/Box';
 
 const headerStyle = {
     color: "white",
@@ -12,23 +12,20 @@ const headerStyle = {
 }
 
 
-const DollarPrices = ( { title, icon, buy, sell, avg }) => {
-    const [open, setOpen] = useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
+const DollarPrices = ( { title, icon, buy, sell }) => {
 
     return (
         <div>
             <Card raised={true}>
                 <CardHeader
-                title={<Typography variant="subtitle1" component="h2">{title}</Typography>}
+                title={<Typography variant="subtitle1" component="h2"><Box fontWeight='fontWeightBold'>{title}</Box></Typography>}
                 avatar={icon}
                 sx={headerStyle}
                 />
                     <CardContent>
                         {sell === "0" ? null : <p><strong>Venta:</strong> ${sell}</p>}
                         {buy === "No Cotiza" ? null : <p><strong>Compra:</strong> ${buy}</p>}
-                        <ConversorMoneda />
+                        <ConversorMoneda cotizacionDolar={parseFloat(sell)} />
                      </CardContent>
             </Card>
         </div>
