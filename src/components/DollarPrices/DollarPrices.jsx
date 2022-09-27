@@ -1,7 +1,5 @@
 import { Card, CardContent, CardHeader, Icon } from '@mui/material';
-import Typography from '@mui/material/Typography';
 import ConversorMoneda from '../ConversorMoneda/ConversorMoneda';
-import Box from '@mui/material/Box';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import "./DollarPrices.css";

@@ -2,8 +2,8 @@ import DollarPrices from "../DollarPrices/DollarPrices";
 import { useEffect, useState } from 'react';
 import Grid from "@mui/material/Grid";
 import PaidIcon from '@mui/icons-material/Paid';
-import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
-import CreditCardIcon from '@mui/icons-material/CreditCard';
+import AdSense from "../AdSense/AdSense";
+import FeedCard from "../AdSense/FeedCard";
 
 const DollarPricesContainer = () => {
     const [dollarBlue, setDollarBlue] = useState([]);
@@ -19,14 +19,17 @@ const DollarPricesContainer = () => {
     }, []);
 
     return (
+        <div>
         <Grid container spacing={5} padding={10} columns={{ xs: 4, md: 12 }}>
             {dollarBlue.map((dollar) => (
                 <Grid key={dollar.casa.nombre} item xs={12} sm={6} md={4} lg={3}>
                     <DollarPrices title={dollar.casa.nombre} icon={<PaidIcon />} buy={dollar.casa.compra} sell={dollar.casa.venta} variation={dollar.casa.variacion} />
                 </Grid>
             ))}
+            <FeedCard />
         </Grid>
-
+        <AdSense />
+        </div>
     );
 }
 
