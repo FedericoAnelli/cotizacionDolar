@@ -19,10 +19,10 @@ const DollarPricesContainer = () => {
     }, []);
 
     return (
-        <Grid container spacing={2} padding={10}>
+        <Grid container spacing={5} padding={10} columns={{ xs: 4, md: 12 }}>
             {dollarBlue.map((dollar) => (
                 <Grid key={dollar.casa.nombre} item xs={12} sm={6} md={4} lg={3}>
-                    <DollarPrices title={dollar.casa.nombre} icon={<PaidIcon />} buy={dollar.casa.compra} sell={dollar.casa.venta} />
+                    <DollarPrices title={dollar.casa.nombre} icon={<PaidIcon />} buy={dollar.casa.compra} sell={dollar.casa.venta} variation={dollar.casa.variacion} />
                 </Grid>
             ))}
         </Grid>

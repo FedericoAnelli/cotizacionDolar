@@ -2,6 +2,9 @@ import { Card, CardContent, CardHeader, Icon } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import ConversorMoneda from '../ConversorMoneda/ConversorMoneda';
 import Box from '@mui/material/Box';
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import "./DollarPrices.css";
 
 const headerStyle = {
     color: "white",
@@ -12,19 +15,24 @@ const headerStyle = {
 }
 
 
-const DollarPrices = ( { title, icon, buy, sell }) => {
+const DollarPrices = ( { title, icon, buy, sell, variation }) => {
+    const variationDecimalChange = variation.replace(",", ".");
+    const variationParsed = ((parseFloat(variationDecimalChange)).toFixed(2));
 
     return (
         <div>
             <Card raised={true}>
                 <CardHeader
-                title={<Typography variant="subtitle1" component="h2"><Box fontFamily='' fontWeight='fontWeightBold'>{title}</Box></Typography>}
+                title={<h2 className='titleStyle'>{title}</h2>}
                 avatar={icon}
                 sx={headerStyle}
                 />
-                    <CardContent>
+                    <CardContent className='valoresDolar'>
+                        <div className='valores'>
                         {sell === "0" ? null : <p><strong>Venta:</strong> ${sell}</p>}
                         {buy === "No Cotiza" ? null : <p><strong>Compra:</strong> ${buy}</p>}
+                        </div>
+                        <p className='variacion'><strong>Variación: </strong>  {variationParsed < 0 ?  <p className='negative'> {variation} <ArrowDropDownIcon /></p> : <p className='positive'> {variation} <ArrowDropUpIcon /></p>} </p>
                         <ConversorMoneda cotizacionDolar={parseFloat(sell)} />
                      </CardContent>
             </Card>

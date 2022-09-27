@@ -27,12 +27,12 @@ const ConversorMoneda = ({ cotizacionDolar }) => {
       };
 
     return (
-        <div>
-            <h5>Convertir</h5>
+        <div className='contenedorConversor'>
+            <h4>Convertir</h4>
             <div className={swap ? "conversor" : "conversorReverse"}>
             <FormControl fullWidth sx={{ m: 1, width: "100%" }}>
             <InputLabel htmlFor="outlined-adornment-amount">Cantidad</InputLabel>
-                <OutlinedInput
+                <OutlinedInput {...(!swap ? {disabled: true} : {disabled: false})}
                     id="outlined-adornment-amount"
                     value={swap ? values.amountARS : values.amountUSD / cotizacionDolar }
                     onChange={swap ? handleChange('amountUSD') : handleChange('amountARS')}
@@ -43,7 +43,7 @@ const ConversorMoneda = ({ cotizacionDolar }) => {
             <SwapVerticalCircleIcon className='swapIcon' onClick={() => handleSwapClick()} />
             <FormControl fullWidth sx={{ m: 1, width: "100%" }}>
                 <InputLabel htmlFor="outlined-adornment-amount">Cantidad</InputLabel>
-                <OutlinedInput
+                <OutlinedInput  {...(swap ? {disabled: true} : {disabled: false})}
                     id="outlined-adornment-amount"
                     value={swap ? values.amountUSD * cotizacionDolar : values.amountUSD}
                     onChange={swap ? handleChange('amountARS') : handleChange('amountUSD')}

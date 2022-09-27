@@ -7,8 +7,6 @@ import "./NavBar.css";
 
 const navItems = [];
 
-
-
 const NavBar = () => {
 
 
