@@ -15,11 +15,11 @@ return (
       <AppBar component="nav" className='customToolBar'>
         <Toolbar >
           <Typography
-            variant="h5"
+            variant="h4"
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'block', sm: 'block' } }}
           >
-            <Box fontWeight='fontWeightBold'> Cotización Dólar </Box>
+            <Box fontWeight='fontWeightBold'>  DolarBlue.co  </Box>
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
