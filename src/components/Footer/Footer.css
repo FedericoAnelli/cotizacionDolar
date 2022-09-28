@@ -1,0 +1,10 @@
+.termsOfUse{
+    width: 100%;
+    height: 300px;
+}
+
+.legales{
+    cursor: pointer;
+    user-select: none;
+    margin : 2% 2% 0 2%;
+}

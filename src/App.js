@@ -3,6 +3,7 @@ import DollarPricesContainer from './components/DollarPricesContainer/DollarPric
 import NavBar from './components/NavBar/NavBar';
 import NewsFeedContainer from './components/NewsFeedContainer/NewsFeedContainer';
 import {Adsense} from '@ctrl/react-adsense';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         
       <h1 className='customHeader'>Noticias de Economía</h1>      
       <NewsFeedContainer />
+      <Footer  />
     </div>
   );
 }

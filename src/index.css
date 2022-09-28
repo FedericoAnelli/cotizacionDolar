@@ -5,11 +5,12 @@ body {
   font-family: 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #bac8d4 ;
+  background-color: #0c2337 ;
   background-image: url(./components/assets/images/background.svg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: bottom;
+  background-position: fixed;
+  background-attachment: fixed;
 }
 
 code {
