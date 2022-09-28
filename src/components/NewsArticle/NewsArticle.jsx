@@ -9,7 +9,7 @@ import './NewsArticle.css';
 const NewsArticle = ({ title, contentSnippet, image, fuente, pubDate }) => {
 
     return (
-        <Card sx={{ maxWidth: 345, height: "99%", position: "relative", marginLeft: "8%" , border:"black 2px solid"}}>
+        <Card raised={true} sx={{ maxWidth: 345, height: "99%", position: "relative", marginLeft: "8%"}}>
 
             <CardHeader
                 title= {<h5 className='titulares'>{  title }</h5>}
