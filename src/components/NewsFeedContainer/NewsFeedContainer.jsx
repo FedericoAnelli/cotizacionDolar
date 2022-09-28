@@ -1,10 +1,10 @@
 import { useState, useEffect, Suspense, lazy } from 'react';
 import NewsArticle from '../NewsArticle/NewsArticle';
-import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import CircularProgress from '@mui/material/CircularProgress';
 import './NewsFeedContainer.css';
 import {Adsense} from '@ctrl/react-adsense';
+import Grid from '@mui/material/Grid';
 let Parser = require('rss-parser')
 
 const responsive = {
@@ -67,53 +67,40 @@ const NewsFeedContainer = () => {
     if (error) return <p>Error</p>;
     if (!news || news.length === 0) return <CircularProgress />;
     return (
-            <div>
-            <Carousel className='carouselCustomization' responsive={responsive} swipeable={true} draggable={true}>
-                {news.items?.map((item, index) => (
-                  <Suspense fallback={<CircularProgress />}>
-                    <NewsArticle key={index} title={item.title} image={cutImage(item.content)} contentSnippet={item.contentSnippet} fuente="Editorial Perfil" pubDate={item.pubDate}/>
-                  </Suspense>
-                ))}
-            </Carousel>
-
-            <Adsense
-              client="ca-pub-4864391857426149"
-              style={{ width: '100%' }}
-              slot="7953644771"
-              format="auto"
-              />
-
-            <Carousel className='carouselCustomization' responsive={responsive} swipeable={true} draggable={true}>
+            
+            <Grid container spacing={2} sx={{p: 5}}>
                 {newsClarin.items?.map((itemClarin, index) => (
+                <Grid item xs={12} sm={6} md={4} lg={3}>
                     <Suspense fallback={<CircularProgress />}>
                     <NewsArticle key={index} title={itemClarin.title} image={cutImage(itemClarin.content)} contentSnippet={itemClarin.contentSnippet} fuente="Clarín" pubDate={itemClarin.pubDate}/>
                     </Suspense>
+                </Grid>
                 ))}
-            </Carousel>
-
-            <Adsense
-              client="ca-pub-4864391857426149"
-              style={{ width: '100%' }}
-              slot="7953644771"
-              format="auto"
-              />
-
-            <Carousel className='carouselCustomization' responsive={responsive} swipeable={true} draggable={true}>
+                
                 {newsPagina12.items?.map((itemPagina12, index) => (
+                <Grid item xs={12} sm={6} md={4} lg={3}>
                     <Suspense fallback={<CircularProgress />}>
                     <NewsArticle key={index} title={itemPagina12.title} image={cutImage(itemPagina12.content)} contentSnippet={itemPagina12.contentSnippet} fuente="Página 12" pubDate={itemPagina12.pubDate}/>
                     </Suspense>
+                </Grid>
                 ))}
-            </Carousel>
 
-            <Adsense
+                {news.items?.map((item, index) => (
+                  <Grid item xs={12} sm={6} md={4} lg={3}>
+                    <Suspense fallback={<CircularProgress />}>
+                      <NewsArticle key={index} title={item.title} image={cutImage(item.content)} contentSnippet={item.contentSnippet} fuente="Editorial Perfil" pubDate={item.pubDate}/>
+                    </Suspense>
+                  </Grid>
+                ))}
+
+              <Adsense
               client="ca-pub-4864391857426149"
               style={{ width: '100%' }}
               slot="7953644771"
               format="auto"
               />
+            </Grid>
 
-            </div>
             );
 };
 

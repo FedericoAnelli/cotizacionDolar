@@ -38,6 +38,7 @@ const ConversorMoneda = ({ cotizacionDolar }) => {
             <InputLabel htmlFor="outlined-adornment-amount">Cantidad</InputLabel>
                 <OutlinedInput {...(!swap ? {disabled: true} : {disabled: false})}
                     id="outlined-adornment-amount"
+                    autoComplete="off"
                     value={swap ? values.amountARS : values.amountUSD / cotizacionDolar }
                     onChange={swap ? handleChange('amountUSD') : handleChange('amountARS')}
                     startAdornment={<InputAdornment position="start">U$D</InputAdornment>}
@@ -49,6 +50,7 @@ const ConversorMoneda = ({ cotizacionDolar }) => {
                 <InputLabel htmlFor="outlined-adornment-amount">Cantidad</InputLabel>
                 <OutlinedInput  {...(swap ? {disabled: true} : {disabled: false})}
                     id="outlined-adornment-amount"
+                    autoComplete="off"
                     value={swap ? values.amountUSD * cotizacionDolar : values.amountUSD}
                     onChange={swap ? handleChange('amountARS') : handleChange('amountUSD')}
                     startAdornment={<InputAdornment position="start">AR$</InputAdornment>}
