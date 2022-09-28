@@ -30,6 +30,7 @@ const responsive = {
 const NewsFeedContainer = () => {
     const [news, setNews] = useState([]);
     const [newsClarin, setNewsClarin] = useState([]);
+    const [newsPagina12, setNewsPagina12] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     let parser = new Parser();
@@ -50,9 +51,10 @@ const NewsFeedContainer = () => {
             setLoading(true);
             let responsePerfil = await parser.parseURL('https://www.perfil.com/feed/economia')
             let responseClarin = await parser.parseURL('https://rss.app/feeds/SoMasYosEiGxQvfI.xml')
-            console.log(responseClarin);
+            let responsePagina12 = await parser.parseURL('https://rss.app/feeds/4aSAExYWoCTQR3Tf.xml')
             setNews(responsePerfil);
             setNewsClarin(responseClarin);
+            setNewsPagina12(responsePagina12);
         } catch (e) {
             setError(e);
         }
@@ -85,6 +87,21 @@ const NewsFeedContainer = () => {
                 {newsClarin.items?.map((itemClarin, index) => (
                     <Suspense fallback={<CircularProgress />}>
                     <NewsArticle key={index} title={itemClarin.title} image={cutImage(itemClarin.content)} contentSnippet={itemClarin.contentSnippet} fuente="Clarín" pubDate={itemClarin.pubDate}/>
+                    </Suspense>
+                ))}
+            </Carousel>
+
+            <Adsense
+              client="ca-pub-4864391857426149"
+              style={{ width: '100%' }}
+              slot="7953644771"
+              format="auto"
+              />
+
+            <Carousel className='carouselCustomization' responsive={responsive} swipeable={true} draggable={true}>
+                {newsPagina12.items?.map((itemPagina12, index) => (
+                    <Suspense fallback={<CircularProgress />}>
+                    <NewsArticle key={index} title={itemPagina12.title} image={cutImage(itemPagina12.content)} contentSnippet={itemPagina12.contentSnippet} fuente="Página 12" pubDate={itemPagina12.pubDate}/>
                     </Suspense>
                 ))}
             </Carousel>

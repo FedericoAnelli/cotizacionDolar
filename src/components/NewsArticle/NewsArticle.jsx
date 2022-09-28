@@ -9,7 +9,7 @@ import './NewsArticle.css';
 const NewsArticle = ({ title, contentSnippet, image, fuente, pubDate }) => {
 
     return (
-        <Card sx={{ maxWidth: 345, height: "100%", position: "relative", marginLeft: "8%" }}>
+        <Card sx={{ maxWidth: 345, height: "99%", position: "relative", marginLeft: "8%" , border:"black 2px solid"}}>
             <CardHeader
                 title= {<h5 className='titulares'>{  title }</h5>}
                 subheader= {<p className='fechaPublicacion'>{pubDate}</p>}
@@ -22,7 +22,7 @@ const NewsArticle = ({ title, contentSnippet, image, fuente, pubDate }) => {
             />
             <CardContent>
                 <Typography variant="body2" color="text.secondary">
-                       {contentSnippet}
+                       {contentSnippet ? contentSnippet : "Noticia en desarrollo"}
                 </Typography>
             <p className='source'>Fuente: {fuente}</p>
             </CardContent>
