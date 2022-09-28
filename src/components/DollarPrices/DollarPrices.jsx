@@ -22,7 +22,7 @@ const DollarPrices = ( { title, icon, buy, sell, variation }) => {
 
     return (
         <div>
-            <Card raised={true} sx={{ margin: "0% 5% 0 5%" }}>
+            <Card raised={true} sx={{ margin: "0% 5% 0 5%", marginBottom: "5%" }}>
                 <CardHeader
                 title={<h2 className='titleStyle'>{title}</h2>}
                 avatar={icon}

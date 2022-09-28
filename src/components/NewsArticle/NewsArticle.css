@@ -1,0 +1,22 @@
+.source{
+    font-family: 'Lato', sans-serif;
+    position: absolute;
+    bottom: 0;
+    font-size: xx-small;
+}
+
+.titulares{
+    font-family: 'Lato', sans-serif;
+    font-size: large;
+    margin: 0 0 5% 0;
+    padding: 0;
+    list-style: none;
+}
+
+.fechaPublicacion{
+    font-family: 'Lato', sans-serif;
+    font-size: small;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
