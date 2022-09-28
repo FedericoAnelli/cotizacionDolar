@@ -38,3 +38,8 @@
     transform: rotate(360deg);
   }
 }
+
+.customHeader{
+  font-family: 'Lato', sans-serif;
+  color: white;
+}

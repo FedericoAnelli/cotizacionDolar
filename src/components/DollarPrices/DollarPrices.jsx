@@ -35,7 +35,7 @@ const DollarPrices = ( { title, icon, buy, sell, variation }) => {
                         {sell === "0" ? null : <p><strong>Venta:</strong> ${sell}</p>}
                         {buy === "No Cotiza" ? null : <p><strong>Compra:</strong> ${buy}</p>}
                         </div>
-                        <div className='variacion'> <p><strong>Variación: </strong></p> {numberParser(variation) < 0 ?  <p className='negative'> {variation} <ArrowDropDownIcon /></p> : <p className='positive'> {variation} <ArrowDropUpIcon /></p>} </div>
+                        <div className='variacion'> <p><strong>Variación: </strong></p> {numberParser(variation) < 0 ?  <p className='negative'> {variation}% <ArrowDropDownIcon /></p> : <p className='positive'> +{variation}% <ArrowDropUpIcon /></p>} </div>
                         <ConversorMoneda cotizacionDolar={numberParser(sell)} />
                      </CardContent>
             </Card>

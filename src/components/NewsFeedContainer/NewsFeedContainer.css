@@ -1,0 +1,6 @@
+.carouselCustomization{
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  text-align: left;
+}
