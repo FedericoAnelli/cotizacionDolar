@@ -15,7 +15,7 @@ const ConversorMoneda = ({ cotizacionDolar }) => {
       const [swap, setSwap] = useState(false);
     
       const handleChange = (prop) => (event) => {
-        if(event.target.value === '')
+        if(event.target.value === '' || isNaN(event.target.value))
         {
             setValues({
                 amountUSD: '',
@@ -27,10 +27,6 @@ const ConversorMoneda = ({ cotizacionDolar }) => {
       };
 
       const handleSwapClick = () => {
-        setValues({
-            amountUSD: '',
-            amountARS: ''
-          })
         setSwap(!swap);
       };
 
