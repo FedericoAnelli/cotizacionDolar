@@ -10,6 +10,7 @@ const NewsArticle = ({ title, contentSnippet, image, fuente, pubDate }) => {
 
     return (
         <Card sx={{ maxWidth: 345, height: "99%", position: "relative", marginLeft: "8%" , border:"black 2px solid"}}>
+
             <CardHeader
                 title= {<h5 className='titulares'>{  title }</h5>}
                 subheader= {<p className='fechaPublicacion'>{pubDate}</p>}
@@ -26,6 +27,7 @@ const NewsArticle = ({ title, contentSnippet, image, fuente, pubDate }) => {
                 </Typography>
             <p className='source'>Fuente: {fuente}</p>
             </CardContent>
+
         </Card>
     );
     }
