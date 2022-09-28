@@ -8,6 +8,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
+    <script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
   </React.StrictMode>
 );
 

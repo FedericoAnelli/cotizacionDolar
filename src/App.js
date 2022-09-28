@@ -8,21 +8,23 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <div>
+
         <Adsense
           client="ca-pub-4864391857426149"
+          style={{ width: '100%' }}
           slot="7953644771"
           format="auto"
         />
-      </div>
+
       <DollarPricesContainer />
-      <div>
+
         <Adsense
           client="ca-pub-4864391857426149"
+          style={{ width: '100%' }}
           slot="7953644771"
           format="auto"
         />
-      </div>
+        
       <h1 className='customHeader'>Noticias de Economía</h1>      
       <NewsFeedContainer />
     </div>
