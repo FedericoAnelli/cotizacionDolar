@@ -47,7 +47,7 @@ const NewsFeedContainer = () => {
         };
         fetchNews();
     }, []);
-    
+
     if (loading) return <CircularProgress />;
     if (error) return <p>Error</p>;
     if (!news || news.length === 0) return <CircularProgress />;

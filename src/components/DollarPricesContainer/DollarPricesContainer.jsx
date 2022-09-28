@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import Carousel from "react-multi-carousel";
 import PaidIcon from '@mui/icons-material/Paid';
 import "react-multi-carousel/lib/styles.css";
+import "./DollarPricesContainer.css";
 
 const responsive = {
     superLargeDesktop: {
@@ -12,7 +13,7 @@ const responsive = {
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 3
+      items: 4
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
@@ -39,9 +40,9 @@ const DollarPricesContainer = () => {
 
     return (
         <div>
-        <Carousel responsive={responsive} swipeable={true} draggable={true}>
+        <Carousel containerClass="carousel-container" responsive={responsive} swipeable={true} draggable={true}>
                 {dollarBlue.map((dollar) => (
-                    <DollarPrices title={dollar.casa.nombre} icon={<PaidIcon />} buy={dollar.casa.compra} sell={dollar.casa.venta} variation={dollar.casa.variacion} />
+                    <DollarPrices key={dollar.casa.nombre} title={dollar.casa.nombre} icon={<PaidIcon />} buy={dollar.casa.compra} sell={dollar.casa.venta} variation={dollar.casa.variacion} />
             ))}
         </Carousel>
         </div>
