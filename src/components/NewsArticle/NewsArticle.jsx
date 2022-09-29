@@ -4,6 +4,9 @@ import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import ShareIcon from '@mui/icons-material/Share';
+import { CardActions } from '@mui/material';
+import IconButton from '@mui/material/IconButton';
 import './NewsArticle.css';
 
 const NewsArticle = ({ title, contentSnippet, image, fuente, pubDate }) => {
@@ -21,13 +24,19 @@ const NewsArticle = ({ title, contentSnippet, image, fuente, pubDate }) => {
                 image={image}
                 alt={title}
             />
-            <CardContent>
+            <CardContent className='contentBody'>
                 <Typography variant="body2" color="text.secondary">
                        {contentSnippet ? contentSnippet : "Noticia en desarrollo"}
                 </Typography>
-            <p className='source'>Fuente: {fuente}</p>
             </CardContent>
-
+            <CardActions disableSpacing>
+            {/*
+                <IconButton aria-label="share" sx={{position: "absolute", bottom: 0, left: 0}}>
+                    <ShareIcon />
+                </IconButton>
+            */}
+                <p className='source'>Fuente: {fuente}</p>
+            </CardActions>
         </Card>
     );
     }
