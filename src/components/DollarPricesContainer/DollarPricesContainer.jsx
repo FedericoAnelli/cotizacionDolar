@@ -39,13 +39,11 @@ const DollarPricesContainer = () => {
     }, []);
 
     return (
-        <div>
         <Carousel containerClass="carousel-container" responsive={responsive} swipeable={true} draggable={true}>
                 {dollarBlue.map((dollar) => (
                     <DollarPrices key={dollar.casa.nombre} title={dollar.casa.nombre} icon={<PaidIcon />} buy={dollar.casa.compra} sell={dollar.casa.venta} variation={dollar.casa.variacion} />
             ))}
         </Carousel>
-        </div>
     );
 }
 

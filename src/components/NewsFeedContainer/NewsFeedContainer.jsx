@@ -68,7 +68,8 @@ const NewsFeedContainer = () => {
     if (!news || news.length === 0) return <CircularProgress />;
     return (
             
-            <Grid container spacing={2} sx={{p: 5}}>
+            <Grid container spacing={2} sx={{p: 5, textAlign: "left" }}>
+              
                 {newsClarin.items?.map((itemClarin, index) => (
                 <Grid item xs={12} sm={6} md={4} lg={3}>
                     <Suspense fallback={<CircularProgress />}>
